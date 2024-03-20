@@ -3,6 +3,11 @@
 
 Se crea un proyecto siguiendo el vídeo del sitio "Coders Free", para un proyecto de Laravel que permita gestion de todo el contenido de forma dinamica...
 
+## [Notas]
+* Se añade el diagrama de la BD en la ruta:
+    + database\Diagrama_DB.png
+* 
+
 ------------------------
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
