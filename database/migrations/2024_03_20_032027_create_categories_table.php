@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+                //Campos adicionales para el Blog
+                $table->string('name');
+                $table->string('slug');
             $table->timestamps();
         });
     }
