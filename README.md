@@ -6,7 +6,12 @@ Se crea un proyecto siguiendo el vídeo del sitio "Coders Free", para un proyect
 ## [Notas]
 * Se añade el diagrama de la BD en la ruta:
     + database\Diagrama_DB.png
-* 
+* Como "post_tag" es una tabla de interconexión tiene unos campos de interconexió
+* Images es una tabla polimorfica, por lo que tambien tiene campos especiales como:
+  + [image]able_id
+  + [image]able_type
+  + Estos campos sin los corchetes, llevan este nombre para fines de organización de datos...
+  + 
 
 ------------------------
 
