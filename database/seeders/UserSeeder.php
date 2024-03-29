@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         //Asi se pasan los datos de un usuario de fijo, junto a los datos falsos
         User::create([
             'name' => 'Imix ICM',
-            'email' => 'imix.icm@gmai.com',
+            'email' => 'imix.icm@gmail.com',
             'password' => bcrypt('zaq1xsw2'),
         ]);
         User::factory(99)->create();
