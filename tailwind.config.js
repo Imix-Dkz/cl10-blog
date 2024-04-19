@@ -23,4 +23,10 @@ export default {
     },
 
     plugins: [forms, typography],
+
+    //Se añade una configuración para deshabilitar "container", que contiene multiples estilos que queremos usar en nuestro propio "container" del proyecto
+    corePlugins:{
+        //...
+        container:false,
+    }
 };

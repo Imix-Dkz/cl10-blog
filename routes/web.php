@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return view('dashboard');
-});
+/* //Se cambia presentación de datos de ruta, se usará el nuevo controlador
+    Route::get('/', function () { //return view('welcome');
+        return view('dashboard');
+    });
+*/
+Route::get('/', [PostController::class, 'index'])->name('post.index');
+
 
 Route::middleware([
     'auth:sanctum',

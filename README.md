@@ -1,7 +1,10 @@
 # Blog +Laravel10
-[sistema de blog](https://www.youtube.com/watch?v=WASf74mDz68&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=49)
+[Sistema de Blog](https://www.youtube.com/watch?v=WASf74mDz68&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=49)
 
 Se crea un proyecto siguiendo el vídeo del sitio "Coders Free", para un proyecto de Laravel que permita gestion de todo el contenido de forma dinamica...
+
+Este proyecto hace uso de las siguientes tecnologias...
+Laravel + Tailwind + Livewire + Alpine
 
 ## [Notas]
 * Se añade el diagrama de la BD en la ruta:
@@ -11,7 +14,6 @@ Se crea un proyecto siguiendo el vídeo del sitio "Coders Free", para un proyect
   + [image]able_id
   + [image]able_type
   + Estos campos sin los corchetes, llevan este nombre para fines de organización de datos...
-  + 
 
 ------------------------
 

@@ -16,6 +16,7 @@ return new class extends Migration
             //Campos añadidos
                 $table->string('name');
                 $table->string('slug');
+                $table->string('color'); //Se añade para poder tener colores variados a las etiquetas
             $table->timestamps();
         });
     }

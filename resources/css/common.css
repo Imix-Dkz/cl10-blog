@@ -1,0 +1,18 @@
+.container{
+    /*[ORIGINAL] @apply mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 bg-red-500;*/
+    @apply mx-auto max-w-7xl px-2;
+}
+
+@media(min-width:640px){
+    /*Se añaden consideraciones para pantallas de telefono sm:Mobil*/
+    .container{
+        @apply px-6;
+    }
+}
+@media(min-width:1024px){
+    /*Se añaden consideraciones para pantallas LG:Tableta*/
+    .container{
+        @apply px-8;
+    }
+
+}

@@ -1,7 +1,11 @@
+/*@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';*/
+@import 'common.css';
+/*Los imports se tienen que hacer ANTES de cualquier otra declarativa*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-    display: none;
-}
+[x-cloak] { display: none; }
