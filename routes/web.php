@@ -3,30 +3,25 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+/* //Web Routes
+    |--------------------------------------------------------------------------
+    | Here is where you can register web routes for your application. These
+    | routes are loaded by the RouteServiceProvider and all of them will
+    | be assigned to the "web" middleware group. Make something great!
+    |
 */
-
 /* //Se cambia presentación de datos de ruta, se usará el nuevo controlador
     Route::get('/', function () { //return view('welcome');
         return view('dashboard');
     });
 */
-Route::get('/', [PostController::class, 'index'])->name('post.index');
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
+//Se crea ruta para los post y su visualización...
+Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->
+group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

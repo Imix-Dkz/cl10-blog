@@ -13,4 +13,17 @@ class PostController extends Controller
         //status=2, es PUBLICADO, Paginado de 8 Post nada más
         return view('post.index', compact('posts'));
     }
+
+    //Para el acceso a la ruta de contenido de un post
+    public function show(Post $post){
+
+        //Se añade variable, para extraer Post similares al que se está mostrando
+        $pSimilares = Post::where('category_id', $post->category_id)
+            ->where('status', 2)
+            ->where('id', '!=', $post->id)
+            ->latest('id')->take(4)->get();
+        
+        //return $post;
+        return view('post.show', compact('post', 'pSimilares'));
+    }
 }
