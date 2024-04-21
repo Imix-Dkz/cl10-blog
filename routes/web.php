@@ -15,11 +15,17 @@ use App\Http\Controllers\PostController;
         return view('dashboard');
     });
 */
+
+//Ruta de Página principal de lista de Post en general
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 
-//Se crea ruta para los post y su visualización...
+//Se crea ruta para el acceso a cada POST y su visualización...
 Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
+//Ruta para filtrado por categoria, mandando como parametro "category"
+Route::get('category/{category}', [PostController::class, 'category'])->name('posts.category');
+
+//Ruta de acceso al dash con validación
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',])->
 group(function () {
     Route::get('/dashboard', function () {
