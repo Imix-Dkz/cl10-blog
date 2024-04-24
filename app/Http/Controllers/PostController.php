@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post; //Hay que incluirlo para poder usarlo
+use App\Models\Tag;
 
 class PostController extends Controller
 {
@@ -38,5 +39,17 @@ class PostController extends Controller
 
         //return $category;
         return view('postv.category', compact('postCategory', 'category'));
+    }
+
+    //Metodo para filtrado por TAG
+    public function tag(Tag $tag){
+        $postsTag = $tag->posts()
+            ->where('status', 2)->latest('id')
+            ->paginate(6); 
+            //Si se pone get(), jala todos los resultados,
+            // pero con paginate, realiza un acomodo automatico de los datos
+        
+        //return $postsTag;
+        return view('postv.tag', compact('postsTag', 'tag'));
     }
 }
