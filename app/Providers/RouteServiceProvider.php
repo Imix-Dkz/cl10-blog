@@ -17,7 +17,14 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    /* // Para que el arranque del sitio sea hacia alguna ruta especifica, se tiene que indicar aqui
+        Por ejemplo, por defeto laravel+jetstream mandan hacia "dashboard"
+        //public const HOME = '/dashboard';
+
+        //Pero si se requiere que se redirija a la ruta por defecto, lo recomendable es hacer que :
+        HOME = '/'
+    */
+    public const HOME = '/';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -35,6 +42,8 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            //Para que Laravel reconosca un archivo de rutas, hay que agregarlo aqui
         });
     }
 }
