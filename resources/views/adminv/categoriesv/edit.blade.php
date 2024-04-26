@@ -2,18 +2,53 @@
 @section('title', 'CL10 Admin LTE')
 
 @section('content_header')
-    <h1>CL10 Admin LTE</h1>
+    <h1>Editar Categoria</h1>
 @stop
 
 @section('content')
-    <p>Editar Categorias.</p>
-@stop
+    @if (session('info'))
+        <div class="alert alert-success">
+            <b>{{ session('info') }}</b>
+        </div>
+    @endif
 
-@section('css')
-    {{-- Add here extra stylesheets --}}
-    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model( $category, ['route' => ['admin.categories.update', $category], 'method' => 'PUT']) !!}
+                <div class="form-group">
+                    {!! Form::label('name', 'Nombre') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el nombre de la categoria']) !!}
+
+                    <!--//Se añaden mensajes de error de validación-->
+                    @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div><div class="form-group">
+                    {!! Form::label('slug', 'Slug') !!}
+                    {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Ingrese el slug de la categoria', 'readonly'] ) !!}
+
+                    <!--//Se añaden mensajes de error de validación-->
+                    @error('slug')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                {!! Form::submit('Actualizar categoria', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+        </div>
+    </div>
 @stop
 
 @section('js')
-    <script> console.log("Hi, I'm using the Laravel-AdminLTE package!"); </script>
+    <!--//Se añade script/libreria para convertir una cadena a slug en tiempo real -->
+    <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+    <!--//Para activarlo, hay que ingresar el siguiente código apuntador al input -->
+    <script>
+        $(document).ready( function() {
+            $("#name").stringToSlug({
+                setEvents: 'keyup keydown blur',
+                getPut: '#slug', //Old, #permalink
+                space: '-'
+            });
+        } );
+    </script>
 @stop

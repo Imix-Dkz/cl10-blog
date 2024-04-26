@@ -17,7 +17,17 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){ //Store a newly created resource in storage.
-        return view('adminv.categoriesv.store');
+        //return view('adminv.categoriesv.store');
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:categories'
+        ]);
+        
+        //return $request->all();
+        $category = Category::create($request->all());
+        //return redirect()->route('admin.categories.edit', $category); //Se añade mensaje de CONFIRMACIÓN
+        return redirect()->route('admin.categories.index', $category)->with('info', 'La categoria \''.$category->name.'\' se creó correctamente');
     }
 
     public function show(Category $category){ //Display the specified resource.
@@ -29,10 +39,25 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, Category $category){ //Update the specified resource in storage.
-        return view('adminv.categoriesv.update');
+        //return view('adminv.categoriesv.update');
+
+        $request->validate([
+            'name' => 'required',
+            //'slug' => 'required|unique:categories' //Se cambia para poder actualizar sobr el slug sin error
+            'slug' => "required|unique:categories,slug,$category->id"
+        ]);
+        
+        $category->update($request->all());
+
+        //return redirect()->route('admin.categories.edit', $category); // Se añade mejnsaje de CONFIRMACIÓN
+        return redirect()->route('admin.categories.edit', $category)->with('info', 'La categoria se actualizo correctamente');
+
     }
 
     public function destroy(Category $category){ //Remove the specified resource from storage.
-        return view('adminv.categoriesv.destroy');
+        //return view('adminv.categoriesv.destroy');
+
+        $category->delete();
+        return redirect()->route('admin.categories.index')->with('info', 'La categoria \''.$category->name.'\' se elimino correctamente');
     }
 }
