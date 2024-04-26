@@ -44,6 +44,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             //Para que Laravel reconosca un archivo de rutas, hay que agregarlo aqui
+            Route::middleware('web', 'auth') //Se le añade el middelware 'auth', por motivos de seguridad
+                ->prefix('admin') //Al agregar el prefijo desde aqui, se evita escribirlo siempre en "admin.php"
+                ->group(base_path('routes/admin.php'));
+
         });
     }
 }
