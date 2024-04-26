@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Editar Categorias.</p>
 @stop
 
 @section('css')

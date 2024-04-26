@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminHomeConotroller extends Controller
-{
-    //Funciónes de opéración del controlador
+class HomeConotroller extends Controller
+{ //Funciónes de opéración del controlador
     public function index(){
         return view('adminv.index');
         /* //Si la redirección fue correcta, ya se puede instalar AdminLTE3
