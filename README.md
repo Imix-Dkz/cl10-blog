@@ -4,7 +4,7 @@
 Se crea un proyecto siguiendo el vídeo del sitio "Coders Free", para un proyecto de Laravel que permita gestion de todo el contenido de forma dinamica...
 
 Este proyecto hace uso de las siguientes tecnologias...
-Laravel + Tailwind + Livewire + Alpine
+Laravel + Tailwind + Livewire + Alpine + Bootsrap
 
 ## [Notas]
 * Se añade el diagrama de la BD en la ruta:
@@ -14,8 +14,13 @@ Laravel + Tailwind + Livewire + Alpine
   + [image]able_id
   + [image]able_type
   + Estos campos sin los corchetes, llevan este nombre para fines de organización de datos...
+* Se aplicarán algunos ajustes menores en el proceso de operación del sitio contrá el curso, pero se buscará añadir navegabilidad...
 
-------------------------
+## Las notas especiales del proceso se realizarán en archivo:
+  + [Info-Laravel.txt](s:/Documentos/DevProyects/Dev_Notes/Laravel_Notes/Info-Laravel.txt)
+  + Si no está disponible en este momento, se agregará al final, que se termine el proyecto
+
+----------------------------------------------------------------------------------------------
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

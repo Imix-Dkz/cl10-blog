@@ -19,11 +19,6 @@
                 @include('adminv.tagsv.partials.form')
                 {!! Form::submit('Actualizar Etiqueta', ['class' => 'btn btn-primary']) !!}
                 <a href="{{ route('admin.tags.index') }}" class="btn btn-secondary">Volver al listado de etiquetas</a>
-                {{-- {!! Form::button('Volver al listado de etiquetas', 
-                    ['class' => 'btn btn-secondary'],
-                    //['onclick' => "location.href = '" . route('admin.tags.index') . "'"]
-                    ['onclick' => "alert('Funcionalidad no disponible')"]
-                ) !!} --}}
             {!! Form::close() !!}
         </div>
     </div>
