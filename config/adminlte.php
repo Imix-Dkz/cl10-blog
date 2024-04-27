@@ -155,7 +155,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    //'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true, //Con eso la barra lateral se fija
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -331,13 +332,20 @@ return [
         ],
         //['header' => 'account_settings'], //Se cambia segmento
         ['header' => 'Administrador'],
-        [
+        [ //MENÚ de categorias
             //'text' => 'profile',
             'text' => 'Categorias',
             //'url' => 'admin/settings',
             'route' => 'admin.categories.index',
             //'icon' => 'fas fa-fw fa-user',
             'icon' => 'fab fa-fw fa-buffer',
+            //Al añadir 'active', se logra que se mantenga activo el menú, el "*", es para todos los elementos en la ruta
+            'active' => ['admin/categories*'],
+        ], //MENÚ de etiquetas
+        [   'text' => 'Etiquetas',
+            'route' => 'admin.tags.index',
+            'icon' => 'fas fa-fw fa-tags',
+            'active' => ['admin/tags*'],
         ],
         [
             'text' => 'change_password',

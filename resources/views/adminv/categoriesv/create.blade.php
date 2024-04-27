@@ -27,6 +27,7 @@
                     @enderror
                 </div>
                 {!! Form::submit('Crear categoria', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('admin.categories.index') }}" class="btn btn-secondary">Volver al listado de Categorias</a>
             {!! Form::close() !!}
         </div>
     </div>
